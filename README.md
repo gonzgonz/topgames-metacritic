@@ -353,6 +353,7 @@ $ curl -v http://localhost:8080/games
     "score": 38,
     "title": "Dying: Reborn"
   }
+]
   ```
 
 1. GET the object where "title" is "LEGO Worlds":
@@ -378,6 +379,42 @@ $ curl -v http://localhost:8080/games/LEGO%20Worlds
   "title": "LEGO Worlds"
 }
 ```
+
+1. GET the object where "title" is "Nioh":
+
+```bash
+$ curl -v http://localhost:8080/games/Nioh
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+> GET /games/Nioh HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.43.0
+> Accept: */*
+>
+* HTTP 1.0, assume close after body
+< HTTP/1.0 200 OK
+< Content-Type: application/json
+< Content-Length: 37
+< Server: Werkzeug/0.12.1 Python/2.7.6
+< Date: Sat, 18 Mar 2017 20:49:06 GMT
+<
+{
+  "score": 87,
+  "title": "Nioh"
+}
+```
+
+1. Browser based tests:
+
+[[https://github.com/gonzgonz/topgames-metacritic/blob/master/images/test1.png]]
+
+[[https://github.com/gonzgonz/topgames-metacritic/blob/master/images/test2.png]]
+
+
+## Final Notes
+
+I hope you like it!
+
 
 
 
