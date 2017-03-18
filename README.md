@@ -406,9 +406,9 @@ $ curl -v http://localhost:8080/games/Nioh
 
 1. Browser based tests:
 
-[[https://github.com/gonzgonz/topgames-metacritic/blob/master/images/test1.png]]
+![alt tag](https://github.com/gonzgonz/topgames-metacritic/blob/master/images/test1.png)
 
-[[https://github.com/gonzgonz/topgames-metacritic/blob/master/images/test2.png]]
+![alt tag](https://github.com/gonzgonz/topgames-metacritic/blob/master/images/test2.png)
 
 
 ## Final Notes
