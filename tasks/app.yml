@@ -1,0 +1,45 @@
+    - name: Install Python
+      apt: name={{ item }} update_cache=yes state=latest 
+      with_items:
+        - python
+        - python-setuptools 
+        - python-virtualenv
+        - python-dev 
+        - libxml2-dev 
+        - libxslt-dev
+        - libssl-dev
+   
+    - name: Make sure App dir is empty
+      file: path={{ release_path }}/App state=absent 
+ 
+    - name: Copy App source to destination Dir
+      copy: src=App dest={{ release_path }} force=yes  owner=ubuntu group=ubuntu mode=755
+
+    - name: virtualenv
+      shell: virtualenv env
+      args:
+        chdir: "{{release_path}}/App"
+
+    - name: env/bin/activate && easy_install pip
+      shell: source env/bin/activate && easy_install pip
+      args:
+        chdir: "{{release_path}}/App" 
+
+    - name: env/bin/activate && pip install --upgrade pip
+      shell: source env/bin/activate && pip install --upgrade pip
+      args:
+        chdir: "{{release_path}}/App"
+
+    - name: pip install -r requirements.txt
+      shell: source env/bin/activate && pip install -r requirements.txt
+      args:
+        chdir: "{{release_path}}/App"
+
+    - name: make sure process is not running
+      command: pkill -f "python listener.py"
+      ignore_errors: true
+        
+    - name: start webapp in the background
+      shell: source env/bin/activate && nohup python listener.py </dev/null >/dev/null 2>&1 &
+      args:
+        chdir: "{{release_path}}/App" 

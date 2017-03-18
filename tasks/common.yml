@@ -1,0 +1,14 @@
+- name: Set /etc/localtime to UTC
+  command: cp /usr/share/zoneinfo/UTC /etc/localtime
+
+- name: Install updates
+  apt: upgrade=dist update_cache=yes
+
+- name: Install essential packages
+  apt: pkg="{{ item }}" state=latest
+  with_items:
+    - ntp
+    - fail2ban
+
+- name: Fix bash instead of dash
+  file: src=/bin/bash dest=/bin/sh state=link

@@ -1,0 +1,8 @@
+---
+- hosts: all
+  sudo: yes
+  vars_files:
+    - vars/main.yml
+  tasks:
+    - include: tasks/common.yml
+    - include: tasks/app.yml
