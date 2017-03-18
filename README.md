@@ -3,7 +3,7 @@
 ### Deploy a RESTful API that exposes two GET methods for retrieving the "TOP PS4 Games by Metascore" from metacritic.com
 
 
-1. The first method, mapped to **/games**, will retrieve the full list of **Top PS4 Games** in an array of JSON elements.
+1. The first method, mapped to **/games**, will retrieve the full list of **Top PS4 Games** in an array of JSON elements. The URL used for parsing is http://www.metacritic.com/browse/games/release-date/new-releases/ps4/metascore
 
 1. The second method, mapped to **/games/<game_title>**, will retrieve only the selected json object if found within the list.
 
