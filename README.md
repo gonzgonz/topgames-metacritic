@@ -413,8 +413,9 @@ $ curl -v http://localhost:8080/games/Nioh
 
 ## Final Notes
 
-I hope you like it!
+1. The Ansible setup included is minimal. There is room for enhancement by adding supervisord to better handle the daemon as a service, for example. Ansible is a really cool toy!
 
+1. Response times could be greatly enhanced by implementing a reverse proxy and caching the parsed json as static content, instead of letting Flask serve all the requests directly by itself.
 
 
 
