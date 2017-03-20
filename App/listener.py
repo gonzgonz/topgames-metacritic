@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/games', methods=['GET'])
 def allgames():
 
-   # Call our topgames function to get the gamelist of the top PS4 games by Metascore
+   # Call our topgames function to get the gamelist of the 'Top PS4 games by Metascore'
     gamelist = topgames()
 
    # Build response and set the right mimetype header
