@@ -1,7 +1,7 @@
 import json
 import requests
 from lxml import html
-from bs4 import BeautifulSoup, NavigableString
+from bs4 import BeautifulSoup
 
 def topgames():
     url = 'http://www.metacritic.com/browse/games/release-date/new-releases/ps4/metascore'
